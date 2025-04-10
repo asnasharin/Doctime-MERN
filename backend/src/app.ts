@@ -23,11 +23,11 @@ dotenv.config()
 import http from 'http'
 import serverConfig from './server'
 import connectDb from './config/db'
-// import { routes } from './adapters/Router'
+import { routes } from './adapters/Router'
 import config from './config/config'
 import expresscofig from './express'
 import express from 'express'
-// import dependencies from './frameworks/config/dependencies'
+import dependencies from './frameworks/config/dependencies'
 
 import session, { SessionOptions, MemoryStore, SessionData } from "express-session";
 
@@ -96,6 +96,7 @@ declare module 'express-session' {
 }
 
 
+app.use('/api', routes(dependencies))
 
 serverConfig(server, config).startServer()
 
