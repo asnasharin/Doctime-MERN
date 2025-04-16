@@ -3,7 +3,8 @@ import { adminRepository } from '../repository'
 import { doctorRepositery } from '../repository'
 
 import {
-    loginUseCase, registerUseCase, verifyOtpUseCase, findDoctorUseCase, bookAppointmentUseCase
+    loginUseCase, registerUseCase, verifyOtpUseCase, findDoctorUseCase, bookAppointmentUseCase,
+    changePasswordUseCase
 } from '../../application/usecase'
 
 import {
@@ -36,7 +37,8 @@ const useCase: any = {
     doctorLoginUseCase,
     doctorLogoutUseCase,
     findDoctorUseCase,
-    bookAppointmentUseCase
+    bookAppointmentUseCase,
+    changePasswordUseCase
    
 
 
