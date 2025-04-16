@@ -1,5 +1,5 @@
 import {
-    loginUseCase, registerUseCase, verifyOtpUseCase, logoutUseCase,findDoctorUseCase
+    loginUseCase, registerUseCase, verifyOtpUseCase, logoutUseCase,findDoctorUseCase, bookAppointmentUseCase
     
 
 } from './authUseCase'
@@ -8,7 +8,8 @@ export {
     registerUseCase,
     verifyOtpUseCase,
     logoutUseCase,
-    findDoctorUseCase
+    findDoctorUseCase,
+    bookAppointmentUseCase
    
 
 }

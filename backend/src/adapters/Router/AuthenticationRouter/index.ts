@@ -5,6 +5,7 @@ import { adminAuthController } from '../../controller';
 
 
 
+
 export default (dependencies: any) => {
   const router = express();
 
@@ -15,7 +16,7 @@ export default (dependencies: any) => {
   // ===============================================================================================
 
   const { loginController, registerController, verifyOtpController, logoutController,
-    resendOtpController, findDoctorController
+    resendOtpController, findDoctorController, bookAppointmentController
   } = UserController(dependencies);
 
   router.post('/login', loginController);
@@ -24,6 +25,7 @@ export default (dependencies: any) => {
   router.get('/logout', logoutController);
   router.get('/resendOtp', resendOtpController);
   router.get('/findDoctor', findDoctorController);
+  router.post('/bookappoinment', bookAppointmentController)
  
   // ===============================================================================================
   // ADMIN ROUTES

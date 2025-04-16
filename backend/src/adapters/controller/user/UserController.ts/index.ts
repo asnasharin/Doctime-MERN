@@ -4,6 +4,7 @@ import verifyOtpController from "./verifyOTPController"
 import logoutController from "./logoutController"
 import resendOtpController from "./resendOTPController"
 import findDoctorController from "./findDoctorController"
+import bookAppointmentController from "./bookAppointmentController"
 
 
 
@@ -17,6 +18,7 @@ export default (dependencies:any)=>{
     logoutController:logoutController(dependencies),
     resendOtpController:resendOtpController(dependencies),
     findDoctorController:findDoctorController(dependencies),
+    bookAppointmentController:bookAppointmentController(dependencies),
 
  }
 
