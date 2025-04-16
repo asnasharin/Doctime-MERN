@@ -1,57 +1,9 @@
-// import { userRepositery } from '../repository'
-// import { doctorRepositery } from '../repository'
-
-
-// import {
-//     loginUseCase, registerUseCase, verifyOtpUseCase, 
-// } from '../../application/usecase'
-
-
-// import {
-//     doctorRegisterUseCase,
-//     doctorVerifyOtpUseCase, doctorLoginUseCase, doctorLogoutUseCase
-// } from '../../application/usecase'
-
-// import {
-//     adminLoginUseCase, adminUserUseCase, adminDoctorUseCase, getKycDetailsUseCase, kycStatusUseCase, googleRegisterUseCase,
-//     handleUserBlockUseCase,handleDoctorBlockUseCase,adminLogoutUseCase,getAllAppoinmentsUseCase
-// } from '../../application/UseCases'
-// // import adminRepository from '../repository/adminRepository'
-
-
-
-// const useCase: any = {
-//     loginUseCase,
-//     registerUseCase,
-//     verifyOtpUseCase,
-//     doctorRegisterUseCase,
-//     doctorVerifyOtpUseCase,
-//     doctorLoginUseCase,
-//     doctorLogoutUseCase,
-//     adminLoginUseCase,
-
-// }
-
-
-// const repositery: any = {
-//     userRepositery,
-//     doctorRepositery,
-//     adminRepository
-
-// }
-
-
-// export default {
-//     useCase, repositery
-// }
-
 import { userRepositery } from '../repository'
 import { adminRepository } from '../repository'
 import { doctorRepositery } from '../repository'
 
-
 import {
-    loginUseCase, registerUseCase, verifyOtpUseCase, findDoctorUseCase
+    loginUseCase, registerUseCase, verifyOtpUseCase, findDoctorUseCase, bookAppointmentUseCase
 } from '../../application/usecase'
 
 import {
@@ -83,7 +35,8 @@ const useCase: any = {
     doctorVerifyOtpUseCase,
     doctorLoginUseCase,
     doctorLogoutUseCase,
-    findDoctorUseCase
+    findDoctorUseCase,
+    bookAppointmentUseCase
    
 
 

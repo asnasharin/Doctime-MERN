@@ -5,6 +5,7 @@ import registerUseCase from './registerUsecase';
 import verifyOtpUseCase from './verifyOTPUsecase';
 import logoutUseCase from './logoutUsecase';
 import findDoctorUseCase from './findDoctorUseCase';
+import bookAppointmentUseCase from './bookAppoinmentuseCase';
 
 // Add other use cases as needed
 
@@ -13,6 +14,7 @@ export {
   registerUseCase,
   verifyOtpUseCase,
   logoutUseCase,
-  findDoctorUseCase
-  // Add other exports as needed
+  findDoctorUseCase,
+  bookAppointmentUseCase
+  // Add oth er exports as needed
 };
