@@ -1,8 +1,8 @@
 // import loginController from "./loginController"
-import doctorRegisterController from "./doctorRegisterController";
-import doctorVerifyOtpController from "./docotorVerifyOTPController";
-import doctorLoginController from "./doctorLoginController";
-import doctorLogoutController from "./doctorLogoutController";
+import doctorRegisterController from "./DoctorController/doctorRegisterController";
+import doctorVerifyOtpController from "./DoctorController/docotorVerifyOTPController";
+import doctorLoginController from "./DoctorController/doctorLoginController";
+import doctorLogoutController from "./DoctorController/doctorLogoutController";
 
 export default (dependencies: any) => {
    return {
