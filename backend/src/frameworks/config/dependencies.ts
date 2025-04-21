@@ -2,19 +2,26 @@ import { userRepositery } from '../repository'
 import { adminRepository } from '../repository'
 import { doctorRepositery } from '../repository'
 
+
 import {
-    loginUseCase, registerUseCase, verifyOtpUseCase, findDoctorUseCase, bookAppointmentUseCase,
-    changePasswordUseCase
+    loginUseCase, registerUseCase, verifyOtpUseCase, findDoctorUseCase, updatePatientProfileUseCase,
+    viewDoctorDetailsUseCase, generateOtpUseCase, getAvailableSlotUseCase, bookAppointmentUseCase, loadSuccessUseCase,
+    searchDoctrsUseCase, checkOTPUseCase, appointmentDetailsUseCase, changePasswordUseCase, updateEmailUseCase,
+    sendMessegesUseCase, createConverstationUseCase, getConverstationByIdUseCase, getConverstationsUseCase,getConsultCallStatusUseCase,
+    forgotPasswordUseCase,getSearchQueryUseCase,downloadPrescriptionUseCase,sendAudioUseCase,sendImageUseCase
+} from '../../application/usecase'
+
+
+import {
+    doctorRegisterUseCase, getDoctorConverstationByIdUseCase, doctorSendMessegesUseCase, getDoctorConverstationsUseCase,
+    doctorVerifyOtpUseCase, doctorLoginUseCase, doctorLogoutUseCase, kycUseCase, updateDoctorProfileUseCase, addSlotUseCase,
+    showAppoinmentsUseCase, getAlreadyScheduledSlotesUseCase,getKycStatusUseCase,getAppoinmentDetailsUseCase,getConvetsationIdForVideoCallUseCase,
+    addPrescriptionUseCase,createConsultuseCase,updateConsultCallStatusUseCase,changePasswordForDocUseCase,forgotPasswordForDocUseCase,updateEmailForDOCUseCase
 } from '../../application/usecase'
 
 import {
-    doctorRegisterUseCase,
-    doctorVerifyOtpUseCase, doctorLoginUseCase, doctorLogoutUseCase
-} from '../../application/usecase'
-
-
-import {
-    adminLoginUseCase,
+    adminLoginUseCase, adminUserUseCase, adminDoctorUseCase, getKycDetailsUseCase, kycStatusUseCase, googleRegisterUseCase,
+    handleUserBlockUseCase,handleDoctorBlockUseCase,adminLogoutUseCase,getAllAppoinmentsUseCase
 } from '../../application/usecase'
 
 
@@ -36,10 +43,54 @@ const useCase: any = {
     doctorVerifyOtpUseCase,
     doctorLoginUseCase,
     doctorLogoutUseCase,
+    kycUseCase,
+    adminUserUseCase,
+    adminDoctorUseCase,
+    getKycDetailsUseCase,
+    kycStatusUseCase,
+    updateDoctorProfileUseCase,
     findDoctorUseCase,
+    googleRegisterUseCase,
+    updatePatientProfileUseCase,
+    viewDoctorDetailsUseCase,
+    generateOtpUseCase,
+    addSlotUseCase,
+    getAvailableSlotUseCase,
     bookAppointmentUseCase,
-    changePasswordUseCase
-   
+    loadSuccessUseCase,
+    searchDoctrsUseCase,
+    checkOTPUseCase,
+    appointmentDetailsUseCase,
+    showAppoinmentsUseCase,
+    getAlreadyScheduledSlotesUseCase,
+    changePasswordUseCase,
+    updateEmailUseCase,
+    sendMessegesUseCase,
+    createConverstationUseCase,
+    getConverstationByIdUseCase,
+    getConverstationsUseCase,
+    getDoctorConverstationByIdUseCase,
+    doctorSendMessegesUseCase,
+    getDoctorConverstationsUseCase,
+    handleUserBlockUseCase,
+    handleDoctorBlockUseCase,
+    adminLogoutUseCase,
+    getKycStatusUseCase,
+    getAppoinmentDetailsUseCase,
+    getConvetsationIdForVideoCallUseCase,
+    addPrescriptionUseCase,
+    getAllAppoinmentsUseCase,
+    createConsultuseCase,
+    getConsultCallStatusUseCase,
+    updateConsultCallStatusUseCase,
+    forgotPasswordUseCase,
+    getSearchQueryUseCase,
+    changePasswordForDocUseCase,
+    forgotPasswordForDocUseCase,
+    updateEmailForDOCUseCase,
+    downloadPrescriptionUseCase,
+    sendAudioUseCase,
+    sendImageUseCase
 
 
 
