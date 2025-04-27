@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.2",
     "@reduxjs/toolkit": "^2.7.0",
+    "@stripe/stripe-js": "^7.2.0",
     "@zegocloud/zego-uikit-prebuilt": "^2.14.3-beta",
     "lodash": "^4.17.21",
     "primeicons": "^7.0.0",
