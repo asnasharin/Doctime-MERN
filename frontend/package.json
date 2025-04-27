@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.2",
     "@reduxjs/toolkit": "^2.7.0",
     "@zegocloud/zego-uikit-prebuilt": "^2.14.3-beta",
     "lodash": "^4.17.21",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.5",
     "react": "^19.0.0",
     "react-apexcharts": "^1.7.0",
     "react-dom": "^19.0.0",
