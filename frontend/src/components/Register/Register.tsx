@@ -4,7 +4,7 @@ import  { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 import { toast } from "react-toastify";
-import Loading from "../Loading/Loading";
+import Loading from "../../Loading/Loading";
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
