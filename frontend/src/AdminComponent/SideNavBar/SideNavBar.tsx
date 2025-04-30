@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { clearAdmin } from "../../Redux/slices/adminSlice";
 
 export const AdminSidebar = () => {
-  const Admin = useSelector((state: any) => state.persisted.adminAuth);
+  // const Admin = useSelector((state: any) => state.persisted.adminAuth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

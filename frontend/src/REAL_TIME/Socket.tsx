@@ -7,7 +7,7 @@ export const useSocket = (): Socket<any>| null => {
 
     useEffect(() => {
         const newSocket = io("https://doctime-mern.onrender.com", {
-            reconnect: true,
+            reconnection: true,
             secure: true,
             transports: ['polling', 'websocket'], 
         }); 

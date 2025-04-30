@@ -1,19 +1,18 @@
-
-
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearDoctor, DoctorIsAuthenticated } from "../../Redux/slices/doctorAuthSlice";
 import { toast } from "react-toastify";
+import { MouseEventHandler, FC } from "react";
 
-import "./DoctorNavbar.css"; // Add CSS for your new structure and responsive design
+import "./DoctorNavbar.css";
 
-const DoctorNavbar = () => {
+const DoctorNavbar: FC = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(DoctorIsAuthenticated);
   const navigate = useNavigate();
-  const [navOpen, setNavOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState<boolean>(false);
 
   const handleToggleNav = () => {
     setNavOpen(!navOpen);
@@ -30,8 +29,12 @@ const DoctorNavbar = () => {
     <nav className="navbar bg-cyan-950 flex justify-between items-center mx-auto px-4 text-white">
       <div className="flex items-center space-x-4">
         <Link to="/">
-          <img src="https://res.cloudinary.com/dik3qbts6/image/upload/v1723634538/images/orglogo_eyotqj.png"
-           alt="logo" width={100} height={100} />
+          <img
+            src="https://res.cloudinary.com/dik3qbts6/image/upload/v1723634538/images/orglogo_eyotqj.png"
+            alt="logo"
+            width={100}
+            height={100}
+          />
         </Link>
       </div>
 
@@ -52,8 +55,6 @@ const DoctorNavbar = () => {
           onClick={() => !isAuthenticated && toast.warn("Please login")}
         />
 
-      
-
         <NavItem
           to={isAuthenticated ? "/showDoctorAppoinment" : "/doctorLogin"}
           label="Consultations"
@@ -66,18 +67,13 @@ const DoctorNavbar = () => {
           onClick={() => !isAuthenticated && toast.warn("Please login")}
         />
 
-        {/* <NavItem
-          to={isAuthenticated ? "/kycAuth" : "/doctorLogin"}
-          label="KYC"
-          onClick={() => !isAuthenticated && toast.warn("Please login")}
-        /> */}
-  <NavItem
+        <NavItem
           to={isAuthenticated ? "/addingSlot" : "/doctorLogin"}
           label="Slot"
           onClick={() => !isAuthenticated && toast.warn("Please login")}
         />
 
-<NavItem
+        <NavItem
           to={isAuthenticated ? "/createSlot" : "/doctorLogin"}
           label="Manage Slots"
           onClick={() => !isAuthenticated && toast.warn("Please login")}
@@ -109,7 +105,14 @@ const DoctorNavbar = () => {
   );
 };
 
-const NavItem = ({ to, label, onClick }) => (
+// ✅ NavItem Component with Proper TypeScript Types
+interface NavItemProps {
+  to: string;
+  label: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+}
+
+const NavItem: FC<NavItemProps> = ({ to, label, onClick }) => (
   <li className="p-2 hover:bg-[#ffffff] m-2 cursor-pointer duration-300 hover:text-black">
     <Link to={to} onClick={onClick}>
       {label}
@@ -118,9 +121,3 @@ const NavItem = ({ to, label, onClick }) => (
 );
 
 export default DoctorNavbar;
-
-
-
-
-
-
