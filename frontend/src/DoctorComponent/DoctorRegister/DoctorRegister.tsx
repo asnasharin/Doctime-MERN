@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
+import {  GoogleOAuthProvider } from "@react-oauth/google";
 // import { clearDoctor, setDoctor } from "../../Redux/slices/doctorAuthSlice";
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 import { toast } from "react-toastify";
 import Loading from "../../Loading/Loading";
@@ -14,8 +14,8 @@ const DoctorRegister: React.FC = () => {
   const [cpassword, setCpassword] = useState<string>("");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isLoading, setIsLoading] = useState(false); // Loading state
-  const dispatch = useDispatch();
-  const Doctor = useSelector((state: any) => state.persisted.doctorAuth);
+  // const dispatch = useDispatch();
+  // const Doctor = useSelector((state: any) => state.persisted.doctorAuth);
   const navigate = useNavigate();
 
   const handleRegister = async (event: React.FormEvent) => {
@@ -81,20 +81,20 @@ const DoctorRegister: React.FC = () => {
     }
   };
 
-  const handleGoogleSignIn = () => {
-    try {
-      // Open the Google authentication window
-      window.open(
-        "http://localhost:3000/api/auth/google",
-        "_blank",
-        "width=600,height=600"
-      );
-    } catch (error) {
-      console.error("Error during Google Sign-In:", error);
-      // setError("Google Sign-In failed");
-      setErrors({ googleSignIn: "Google Sign-In failed" });
-    }
-  };
+  // const handleGoogleSignIn = () => {
+  //   try {
+  //     // Open the Google authentication window
+  //     window.open(
+  //       "http://localhost:3000/api/auth/google",
+  //       "_blank",
+  //       "width=600,height=600"
+  //     );
+  //   } catch (error) {
+  //     console.error("Error during Google Sign-In:", error);
+  //     // setError("Google Sign-In failed");
+  //     setErrors({ googleSignIn: "Google Sign-In failed" });
+  //   }
+  // };
 
   return (
     <>

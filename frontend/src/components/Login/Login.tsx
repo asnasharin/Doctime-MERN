@@ -15,8 +15,8 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const User = useSelector((state: any) => state.persisted.auth);
-  const isAuth = useSelector((state: any) => state.persisted.isAuthenticated);
+  // const User = useSelector((state: any) => state.persisted.auth);
+  // const isAuth = useSelector((state: any) => state.persisted.isAuthenticated);
   const isAuthenticated = useSelector(UserIsAuthenticated);
   const doctorProfile = JSON.parse(localStorage.getItem('doctorProfile') || '{}');
   const token = doctorProfile.token;
@@ -59,10 +59,10 @@ const Login: React.FC = () => {
       console.error("Error during login:", error);
     }
   };
-  const handleGoogleLogin = () => {
+  // const handleGoogleLogin = () => {
     // Implement Google Sign-In logic here
     // You can use Google Sign-In API or Firebase Authentication for this purpose
-  };
+  // };
 
   return (
     <div className="Login">

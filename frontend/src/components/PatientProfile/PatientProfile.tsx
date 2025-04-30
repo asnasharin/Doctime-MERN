@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-datepicker/dist/react-datepicker.css";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 const PatientProfile: React.FC = () => {
@@ -313,7 +313,7 @@ const PatientProfile: React.FC = () => {
 
     const storedBloodGroup = patientProfileData.data.bloodGroup || "";
     const storedAge = patientProfileData.data.age || "";
-    const storedDob = patientProfileData.data.dob || "";
+    // const storedDob = patientProfileData.data.dob || "";
 
     // Update state with fetched data
     setName(storedName);

@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
 import { Appointment } from '../../Interfaces/Doctor/DoctorInterfaces';
 import axiosInstance from '../../AxiosConfig/axiosInstance';
@@ -7,7 +7,7 @@ interface AppointmentDetailsProps {
   appointment?: Appointment; 
 }
 
-const ListOfAppointments: React.FC<AppointmentDetailsProps> = ({ appointment }) => {
+const ListOfAppointments: React.FC<AppointmentDetailsProps> = () => {
   const [appointmentDetails, setAppointmentDetails] = useState<Appointment | null>(null);
   const doctor = useSelector((state:any)=>state.persisted.doctorAuth);
 
