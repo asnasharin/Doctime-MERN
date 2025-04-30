@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer'
 function AppointmentDetailsPage() {
   return (
     <div>
-      <AppointmentDetails appointment={undefined}/>
+      <AppointmentDetails />
       <br /> <br /> <br />
       <Footer/>
     </div>
