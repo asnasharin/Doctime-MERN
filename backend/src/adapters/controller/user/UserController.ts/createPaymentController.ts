@@ -29,8 +29,8 @@ export default (dependecies: any) => {
                     }
                 ],
                 mode: "payment",
-                success_url: `http://localhost:8000/successAppointment`,
-                cancel_url: "http://localhost:8000/findDoctor",
+                success_url: `https://doctime-mern.onrender.com/successAppointment`,
+                cancel_url: "https://doctime-mern.onrender.com/findDoctor",
                 billing_address_collection: 'required',
                 customer_email: 'customer@example.com',
            
