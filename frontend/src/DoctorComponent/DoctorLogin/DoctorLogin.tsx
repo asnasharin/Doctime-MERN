@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./DoctorlLogin.css";
 import { useSelector, useDispatch } from "react-redux";
 import { clearDoctor, setDoctor } from "../../Redux/slices/doctorAuthSlice";
-import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
+import {  GoogleOAuthProvider } from "@react-oauth/google";
 import { toast } from "react-toastify";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 

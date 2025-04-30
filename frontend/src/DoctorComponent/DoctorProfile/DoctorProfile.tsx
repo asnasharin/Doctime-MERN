@@ -4,11 +4,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../Loading/Loading";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const DoctorProfile: React.FC = () => {
   const navigate = useNavigate();
-  const Doctor = useSelector((state: any) => state.persisted.doctorAuth);
+  // const Doctor = useSelector((state: any) => state.persisted.doctorAuth);
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");

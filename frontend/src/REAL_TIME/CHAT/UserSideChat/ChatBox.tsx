@@ -33,9 +33,9 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
   const messageRef = useRef<any>(null);
 
 
-  const formatTime = (timestamp: any) => {
-    return format(new Date(timestamp), "hh:mm a"); // 12-hour format with AM/PM
-  };
+  // const formatTime = (timestamp: any) => {
+  //   return format(new Date(timestamp), "hh:mm a"); // 12-hour format with AM/PM
+  // };
 
   const toggleEmojiPicker = () => {
     setEmojiPickerOpen((prev) => !prev);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {  Link, useNavigate } from 'react-router-dom';
 import '../adminLogin/AdminLogin.css'
-import { useSelector, useDispatch } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import { setAdmin,clearAdmin } from '../../Redux/slices/adminSlice';
 import { toast } from 'react-toastify';
 import axiosInstance from '../../AxiosConfig/axiosInstance';
@@ -13,7 +13,7 @@ const AdminLogin: React.FC = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const Admin =  useSelector((state: any) => state.persisted.adminAuth);
+  // const Admin =  useSelector((state: any) => state.persisted.adminAuth);
   
 
   // useEffect(() => {

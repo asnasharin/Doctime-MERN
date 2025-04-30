@@ -11,7 +11,7 @@ import Footer from "../../components/Footer/Footer";
 const UpdateEmailForDoc: React.FC = () => {
   const [newEmail, setNewEmail] = useState("");
   const [newOtp, setNewOtp] = useState("");
-  const [showNewEmailInput, setShowNewEmailInput] = useState(true);
+  const [showNewEmailInput] = useState(true);
   const [showNewOtpInput, setShowNewOtpInput] = useState(false);
   const [showResendOTP, setShowResendOTP] = useState(false);
   const [timer, setTimer] = useState(60); // Initial timer value
