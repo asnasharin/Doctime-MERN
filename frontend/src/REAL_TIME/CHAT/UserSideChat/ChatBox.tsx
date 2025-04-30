@@ -17,7 +17,7 @@ interface ChatBoxProps {
 }
 
 const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [emojiPickerOpen, setEmojiPickerOpen] = useState(false); 

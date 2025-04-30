@@ -132,13 +132,13 @@ console.log(base64Image,"base64Image");
   };
 
   const sendMessage = async () => {
-    const data = {
-      converstationId: conversationId,
-      content: messageInput,
-      recieverId: selectedUser._id,
-      senderId: doctor?.doctor._id,
-      type: "text",
-    };
+    // const data = {
+    //   converstationId: conversationId,
+    //   content: messageInput,
+    //   recieverId: selectedUser._id,
+    //   senderId: doctor?.doctor._id,
+    //   type: "text",
+    // };
     const currentTime = new Date(); // Get the current timestamp
 
     socket?.emit("sendMessage", {

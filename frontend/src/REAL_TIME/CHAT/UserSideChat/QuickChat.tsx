@@ -5,7 +5,7 @@ interface QuickChatProps {
   onDoctorSelect: (conversationId: any) => void;
   socket:any
 }
-const QuickChat: React.FC<QuickChatProps> = ({ onDoctorSelect ,socket}) => {
+const QuickChat: React.FC<QuickChatProps> = ({ onDoctorSelect }) => {
   const [doctors, setDoctors] = useState<any[]>([]);
   const [selectedDoctor, setSelectedDoctor] = useState<any>(null); // State variable to store the selected doctor
   const user = useSelector((state: any) => state.persisted.auth.user);
