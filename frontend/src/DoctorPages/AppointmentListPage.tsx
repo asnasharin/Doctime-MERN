@@ -1,4 +1,3 @@
-import React from 'react'
 import ListOfAppointments from '../DoctorComponent/ListOfAppointments/ListOfAppointments'
 
 function AppointmentListPage() {

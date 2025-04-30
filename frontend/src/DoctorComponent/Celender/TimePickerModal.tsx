@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import { TimeSlot } from '../../Interfaces/Doctor/DoctorInteface';
+import { TimeSlot } from '../../Interfaces/Doctor/DoctorInterfaces';
 
 
 interface TimePickerModalProps {

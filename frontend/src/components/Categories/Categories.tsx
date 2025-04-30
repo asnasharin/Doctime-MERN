@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Carousel, CarouselResponsiveOption } from "primereact/carousel";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 import { Doctor } from "../../Interfaces/User/UserInterface";

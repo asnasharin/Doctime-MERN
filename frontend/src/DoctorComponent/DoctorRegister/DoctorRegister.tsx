@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
-import { clearDoctor, setDoctor } from "../../Redux/slices/doctorAuthSlice";
+// import { clearDoctor, setDoctor } from "../../Redux/slices/doctorAuthSlice";
 import { useSelector, useDispatch } from "react-redux";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 import { toast } from "react-toastify";

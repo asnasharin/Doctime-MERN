@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Footer from '../components/Footer/Footer';
 import AddSingleDaySlot from '../DoctorComponent/Slot/AddSingleDaySlot';
 import AddMultipleDaySlot from '../DoctorComponent/Slot/AddMultipleDaySlot';

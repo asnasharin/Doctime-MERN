@@ -1,4 +1,3 @@
-import React from 'react'
 import Wallet from '../AdminComponent/Wallet/Wallet'
 import { ToastContainer } from 'react-toastify';
 import AdminLayout from '../AdminComponent/LayoutComponent/AdminLayout';

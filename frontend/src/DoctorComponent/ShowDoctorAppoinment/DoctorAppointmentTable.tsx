@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 import { useSelector } from "react-redux";
 import { Appointment } from "../../Interfaces/Doctor/DoctorInterfaces";

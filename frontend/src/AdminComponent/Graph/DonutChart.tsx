@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useState } from 'react';
+import  { FC, useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
 import axiosInstance from '../../AxiosConfig/axiosInstance';
-import { Doctor } from "../../Interfaces/Doctor/DoctorInteface";
+import { Doctor } from "../../Interfaces/Doctor/DoctorInterfaces";
 import { User } from '../../Interfaces/User/UserInterface';
 
 const DonutChart: FC = () => {

@@ -1,8 +1,6 @@
-
-  
 import React, { useState, useEffect, ChangeEvent, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from '../NavBar/searchBar';
+// import SearchBar from '../NavBar/searchBar';
 import _ from 'lodash';
 import { Doctor } from "../../Interfaces/Doctor/DoctorInterfaces";
 import axiosInstance from '../../AxiosConfig/axiosInstance';
