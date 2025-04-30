@@ -1,21 +1,31 @@
-export default function appointmentDetailsUseCase(dependencies: any) {
-    const { userRepositery } = dependencies.repositery;
+import { Request, Response } from "express";
+export default (dependecies: any) => {
 
-    const executeFunction = async (data: any) => { 
-        try {
-            const response = await userRepositery.appointmentDetails(data);
-            
-            
-            if (response.status) {
-                return { status: true, data: response.data };
-            } else {
-                return { status: false, message: response.message };
-            }
-        } catch (error) {
-            console.log(error);
-            return { status: false, message: "Error in bookAppointmentUseCase" };
-        }
-    };
 
-    return { executeFunction };
-}
+  const { appointmentDetailsUseCase } = dependecies.useCase
+  const appointmentDetailsController = async (req: Request, res: Response) => {
+
+    try {
+      const {userId } = req.body
+
+      const data = {
+        userId
+      }
+
+      const response = await appointmentDetailsUseCase(dependecies).executeFunction(data)
+
+console.log(response,"pppp");
+
+      if (response && response.status && response.data) {
+        res.json({ status: true, data: response.data });
+
+      } else {
+        res.json({ status: false, message: "Data not found" });
+      }
+    } catch (error) {
+      console.log(error, "error in viewDoctorDetailsController ")
+    }
+
+  };
+  return appointmentDetailsController;
+};

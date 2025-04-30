@@ -13,10 +13,10 @@ function Chat() {
   const socket: Socket<any> | null = useSocket();
 
   const navigate = useNavigate();
-  const handleUserSelection = (data: { convesationId: any; user: any }) => {
+  const handleUserSelection = (data: { conversationId: any; user: any }) => {
     
     setSelectedUser(data.user);
-    navigate(`/showChat/${data.convesationId}`);
+    navigate(`/showChat/${data.conversationId}`);
 
   };
 

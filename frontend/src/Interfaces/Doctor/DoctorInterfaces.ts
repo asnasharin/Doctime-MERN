@@ -28,6 +28,7 @@ export interface Doctor {
     endTime: string;
     breakDuration: number;
     consultationDuration: number;
+    slots: SlotTime[];
   }
   
   export interface SlotTime {

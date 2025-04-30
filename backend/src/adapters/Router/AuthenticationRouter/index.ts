@@ -1,45 +1,3 @@
-// import express from 'express';
-
-// import { UserController } from '../../controller';
-// import { adminAuthController } from '../../controller';
-
-
-
-
-// export default (dependencies: any) => {
-//   const router = express();
-
-
-
-//   // ===============================================================================================
-//   // USER ROUTES
-//   // ===============================================================================================
-
-//   const { loginController, registerController, verifyOtpController, logoutController,
-//     resendOtpController, findDoctorController, bookAppointmentController
-//   } = UserController(dependencies);
-
-//   router.post('/login', loginController);
-//   router.post('/register', registerController);
-//   router.post('/verifyOtp', verifyOtpController);
-//   router.get('/logout', logoutController);
-//   router.get('/resendOtp', resendOtpController);
-//   router.get('/findDoctor', findDoctorController);
-//   router.post('/bookappoinment', bookAppointmentController)
- 
-//   // ===============================================================================================
-//   // ADMIN ROUTES
-//   // ===============================================================================================
-//   const { adminLoginController, adminLogoutController } = adminAuthController(dependencies);
-//   router.post('/admin', adminLoginController);
-//   router.get('/adminHome', adminLoginController);
-//   router.post('/adminLogout', adminLogoutController)
-//   // ========== //  
- 
-//   return router;
-// };
-
-
 import express from 'express';
 
 import { UserController } from '../../controller';
@@ -77,7 +35,7 @@ export default (dependencies: any) => {
   router.get('/resendOtp', resendOtpController);
   router.get('/findDoctor', findDoctorController);
   router.post('/updatePatientProfile',upload.single('image'), updatePatientProfileController);
-  router.get('/viewDoctorDetails/:id', viewDoctorDetailsController.executeFunction);
+  router.get('/viewDoctorDetails/:id', viewDoctorDetailsController);
   router.get('/getAvailableSlot/:id', getAvailableSlotController);
   router.post('/generateOtp', generateOtpController);
   router.post('/bookAppointment', bookAppointmentController)
@@ -85,7 +43,7 @@ export default (dependencies: any) => {
   router.post('/loadSuccess', loadSuccessController)
   router.post('/checkOTP', checkOTPController)
   router.post('/searchDoctrs', searchDoctrsController)
-  router.post('/appointmentDetails', appointmentDetailsController.executeFunction)
+  router.post('/appointmentDetails', appointmentDetailsController)
   router.post('/changePassword', changePasswordController)
   router.post('/forgotPassword', forgotPasswordController)
   router.post('/updateEmail', updateEmailController)
