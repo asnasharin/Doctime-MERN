@@ -1,4 +1,3 @@
-import React from 'react'
 import Checkout from '../components/Chekout/Checkout'
 import Footer from '../components/Footer/Footer'
 

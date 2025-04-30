@@ -1,4 +1,3 @@
-import React from 'react'
 import AppointmentDetails from '../components/AppointmentDetails/AppointmentDetails'
 import Footer from '../components/Footer/Footer'
 

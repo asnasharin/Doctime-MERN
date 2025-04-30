@@ -1,4 +1,3 @@
-import React from 'react'
 import Otp from '../components/Otp/Otp'
 // import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Footer/Footer'
