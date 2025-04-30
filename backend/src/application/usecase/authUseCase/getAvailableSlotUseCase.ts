@@ -1,27 +1,21 @@
-import { Request, Response } from "express";
-export default (dependecies: any) => {
-  
+export default function getAvailableSlotUseCase(dependencies: any) {
+  const { userRepositery } = dependencies.repositery;
 
-  const { getAvailableSlotUseCase}=dependecies.useCase
-  const getAvailableSlotController = async (req: Request, res: Response) => {
-   
-    try {  
-      const { id } = req.params;
-
-           const response=await  getAvailableSlotUseCase(dependecies).executeFunction(id)
-           
-           
-
-        if (response && response.status && response.data) {
-          res.json({ status: true, data: response.data });
+  const executeFunction = async (id: string) => { // Accept ID as a parameter
+      try {
+          // Pass the ID to the repository method
+          const response = await userRepositery.getAvailableSlot(id);
           
-      } else {
-          res.json({ status: false, message: "Data not found" });
-      }   
-    } catch (error) {
-       console.log(error,"error in viewDoctorDetailsController ")
-    }
-    
+          if (response.status) {
+              return { status: true, data: response.data };
+          } else {
+              return { status: false, message: response.message };
+          }
+      } catch (error) {
+          console.log(error);
+          return { status: false, message: "Error in viewDoctorDetailsUseCase" };
+      }
   };
-  return getAvailableSlotController;
-};
+
+  return { executeFunction };
+}

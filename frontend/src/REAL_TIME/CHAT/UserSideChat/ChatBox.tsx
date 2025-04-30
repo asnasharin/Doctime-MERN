@@ -25,7 +25,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
   const [audioData, setAudioData] = useState<Blob | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const [audioStream, setAudioStream] = useState<MediaStream | null>(null);
-  const { convesationId } = useParams();
+  const { conversationId } = useParams();
   const [messages, setMessages] = useState<any[]>([]);
   const [messageInput, setMessageInput] = useState("");
   const User = useSelector((state: any) => state.persisted.auth);
@@ -67,7 +67,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
   useEffect(() => {
     (async () => {
       const response = await axiosInstance.get(
-        `/api/auth/getConverstationById?id=${convesationId}`
+        `/api/auth/getConverstationById?id=${conversationId}`
       );
 
       if (response.data.status) {
@@ -76,15 +76,15 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
         toast.error(response.data.data);
       }
     })();
-  }, [convesationId, userId]);
+  }, [conversationId, userId]);
 
   useEffect(() => {
     if (socket) {
       if (User?.user?._id !== undefined) {
-        socket?.emit("joinChat", { id: userId, chatId: convesationId });
+        socket?.emit("joinChat", { id: userId, chatId: conversationId });
       }
     }
-  }, [convesationId, socket]);
+  }, [conversationId, socket]);
 
   useEffect(() => {
     messageRef?.current?.scrollIntoView({ behavior: "smooth" });
@@ -93,7 +93,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
   useEffect(() => {
     if (socket) {
       socket.on("getMessage", (data: any) => {
-        if (data.converstationId === convesationId) {
+        if (data.converstationId === conversationId) {
           setMessages((prevMessages: any) => {
             const setNewMessage = [...prevMessages, data];
             return setNewMessage;
@@ -114,7 +114,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
         socket.emit("sendImage", {
           senderId: User.user._id,
           recieverId: selectedDoctor._id,
-          converstationId: convesationId,
+          converstationId: conversationId,
           content: base64Image, // Send the base64 image data
           type: "image",
           timestamp: currentTime,
@@ -130,7 +130,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
 
   const sendMessage = async () => {
     const data = {
-      converstationId: convesationId,
+      converstationId: conversationId,
       content: messageInput,
       recieverId: selectedDoctor._id,
       senderId: User.user._id,
@@ -143,7 +143,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
       recieverId: selectedDoctor._id,
       content: messageInput,
       type: "text",
-      converstationId: convesationId,
+      converstationId: conversationId,
       timestamp: currentTime, // Include the current timestamp
     });
     setMessageInput("");
@@ -206,7 +206,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
             content: base64Audio,
             senderId: User.user._id,
             recieverId: selectedDoctor._id,
-            converstationId: convesationId,
+            converstationId: conversationId,
             type: "voice_note",
             timestamp: new Date(),
           });
@@ -435,3 +435,5 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
 };
 
 export default ChatBox;
+
+

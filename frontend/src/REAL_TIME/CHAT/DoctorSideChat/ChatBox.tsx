@@ -19,7 +19,7 @@ interface ChatBoxProps {
 const ChatBox: React.FC<ChatBoxProps> = ({ selectedUser, socket }) => {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const { convesationId } = useParams();
+  const { conversationId } = useParams();
   const [messages, setMessages] = useState<any[]>([]);
   const [messageInput, setMessageInput] = useState("");
   const [emojiPickerOpen, setEmojiPickerOpen] = useState(false); // State to toggle emoji picker
@@ -46,11 +46,11 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedUser, socket }) => {
   };
 
   useEffect(() => {
-    if (!convesationId || !doctor) return; // Add null checks
+    if (!conversationId || !doctor) return; // Add null checks
 
     (async () => {
       const response = await axiosInstance.get(
-        `/api/auth/getConverstationById?id=${convesationId}`
+        `/api/auth/getConverstationById?id=${conversationId}`
       );
 
       if (response.data.status) {
@@ -59,20 +59,20 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedUser, socket }) => {
         toast.error(response.data.data);
       }
     })();
-  }, [convesationId, doctorId]);
+  }, [conversationId, doctorId]);
 
   useEffect(() => {
     if (socket) {
       if (doctorId !== undefined) {
-        socket?.emit("joinChat", { id: doctorId, chatId: convesationId });
+        socket?.emit("joinChat", { id: doctorId, chatId: conversationId });
       }
     }
-  }, [doctor, convesationId, socket]);
+  }, [doctor, conversationId, socket]);
 
   useEffect(() => {
     if (socket) {
       socket.on("getMessage", (data: any) => {
-        if (data.converstationId === convesationId) {
+        if (data.converstationId === conversationId) {
           setMessages((prevMessages: any) => {
             const setNewMessage = [...prevMessages, data];
             return setNewMessage;
@@ -85,8 +85,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedUser, socket }) => {
   useEffect(() => {
     if (!socket || !doctorId) return; // Add null checks
 
-    socket.emit("joinChat", { id: doctorId, chatId: convesationId });
-  }, [socket, convesationId]);
+    socket.emit("joinChat", { id: doctorId, chatId: conversationId });
+  }, [socket, conversationId]);
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
@@ -118,7 +118,7 @@ console.log(base64Image,"base64Image");
           senderId: doctor?.doctor._id,
           recieverId: selectedUser._id,
           content: base64Image,
-          converstationId: convesationId,
+          converstationId: conversationId,
           timestamp: currentTime,
           type: "image",
         });
@@ -133,7 +133,7 @@ console.log(base64Image,"base64Image");
 
   const sendMessage = async () => {
     const data = {
-      converstationId: convesationId,
+      converstationId: conversationId,
       content: messageInput,
       recieverId: selectedUser._id,
       senderId: doctor?.doctor._id,
@@ -146,7 +146,7 @@ console.log(base64Image,"base64Image");
       recieverId: selectedUser._id,
       content: messageInput,
       type: "text",
-      converstationId: convesationId,
+      converstationId: conversationId,
       timestamp: currentTime, // Include the current timestamp
     });
     setMessageInput("");
@@ -207,7 +207,7 @@ console.log(base64Image,"base64Image");
           content: base64Audio,
           senderId: doctor?.doctor._id,
           recieverId: selectedUser._id,
-          converstationId: convesationId,
+          converstationId: conversationId,
           type: "voice_note",
           timestamp: new Date(),
         });

@@ -7,7 +7,7 @@ interface QuickChatProps {
   socket: any;
 }
 const QuickChat: React.FC<QuickChatProps> = ({ onUserSelect, socket }) => {
-  const { convesationId } = useParams();
+  const { conversationId } = useParams();
   const [users, setUsers] = useState<any[]>([]); // Changed state type to array of objects
   const [selectedUser, setSelectedUser] = useState<any>(null); // State variable to store the selected doctor
   const doctor = useSelector((state: any) => state.persisted.doctorAuth);
@@ -32,7 +32,7 @@ const QuickChat: React.FC<QuickChatProps> = ({ onUserSelect, socket }) => {
     };
 
     fetchData();
-  }, [convesationId, socket]);
+  }, [conversationId, socket]);
 
   return (
     <div>
@@ -77,7 +77,7 @@ const QuickChat: React.FC<QuickChatProps> = ({ onUserSelect, socket }) => {
                       }`}
                       onClick={() => {
                         onUserSelect({
-                          convesationId: user.conversation._id,
+                          conversationId: user.conversation._id,
                           user: user.user,
                         });
                         handleDoctorSelection(user);

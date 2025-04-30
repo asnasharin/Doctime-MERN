@@ -6,7 +6,7 @@ export const useSocket = (): Socket<any>| null => {
     const [socket, setSocket] = useState<Socket<any> | null>(null);
 
     useEffect(() => {
-        const newSocket = io("http://localhost:8000", {
+        const newSocket = io("http://localhost:8001", {
             reconnect: true,
             secure: true,
             transports: ['polling', 'websocket'], 

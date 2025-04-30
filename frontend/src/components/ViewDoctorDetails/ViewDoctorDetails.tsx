@@ -4,10 +4,10 @@ import { FaCheckCircle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { Doctor, SlotData } from "../../Interfaces/Doctor/DoctorInteface";
+import { Doctor, SlotData } from "../../Interfaces/Doctor/DoctorInterfaces";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 import { useSocket } from "../../REAL_TIME/Socket";
-import { formatDate } from "../../utils/formatDate"; // Utility function for date formatting
+import { formatDate } from "../../utils/formatDate"; 
 import { FaTimesCircle } from "react-icons/fa";
 
 const ViewDoctorDetails: React.FC = () => {
@@ -35,7 +35,7 @@ const ViewDoctorDetails: React.FC = () => {
         ]);
 
         setDoctor(doctorResponse.data.data);
-        setAvailableSlots(slotsResponse.data.data);
+        setAvailableSlots(slotsResponse.data);
       } catch (error) {
         console.error("Error fetching doctor details:", error);
       }
