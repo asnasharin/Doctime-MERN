@@ -31,7 +31,7 @@ const expressConfig = (app: Express) => {
 
   app.use(
     cors({
-      origin: ["http://localhost:5173", "http://localhost:8000"],
+      origin: ["http://localhost:5173", "http://localhost:8000", "https://doctime-vjiq.onrender.com"],
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
     })
