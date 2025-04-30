@@ -1,7 +1,4 @@
-
-
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import backgroundImage from "../../../public/Banner/doctor-taking-notes-clipboard-welllit-hospital-corridor-providing-ample-space-additional-content.jpg"; // Adjust the path to your image file
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 import { useNavigate } from "react-router-dom";

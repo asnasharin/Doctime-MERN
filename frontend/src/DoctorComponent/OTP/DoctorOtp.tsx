@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import {  useNavigate } from 'react-router-dom';
 import axiosInstance from '../../AxiosConfig/axiosInstance';
 import { toast } from "react-toastify";
-import Loading from "../../Loading/Loading";
+// import Loading from "../../Loading/Loading";
 
 
 const DoctorOtp = () => {

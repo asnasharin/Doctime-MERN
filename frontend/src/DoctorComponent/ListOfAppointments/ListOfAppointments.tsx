@@ -1,7 +1,6 @@
-import axios from 'axios';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
-import { Appointment } from '../../Interfaces/Doctor/DoctorInteface';
+import { Appointment } from '../../Interfaces/Doctor/DoctorInterfaces';
 import axiosInstance from '../../AxiosConfig/axiosInstance';
 
 interface AppointmentDetailsProps {

@@ -1,4 +1,3 @@
-import React from 'react'
 import KYCAuthDoctor from '../DoctorComponent/KYC/KYCAuthDoctor'
 import Footer from '../components/Footer/Footer'
 

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useSelector, useDispatch } from "react-redux";
 import { clearUser, setUser,UserIsAuthenticated } from "../../Redux/slices/authSlice";
-import Google from "./Google";
+// import Google from "./Google";
 import { toast } from "react-toastify";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
 

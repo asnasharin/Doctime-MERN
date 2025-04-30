@@ -8,15 +8,15 @@ export const AdminSidebar = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(clearAdmin);
+    dispatch(clearAdmin());
     navigate("/admin");
   };
 
-  //   useEffect(()=>{
-  //   if (!Admin){
-  //       navigate('/admin')
-  //    }
-  //   },[Admin])
+    // useEffect(()=>{
+    // if (!Admin){
+    //     navigate('/admin')
+    //  }
+    // },[Admin])
 
   return (
     <div>
