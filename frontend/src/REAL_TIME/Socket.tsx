@@ -6,7 +6,7 @@ export const useSocket = (): Socket<any>| null => {
     const [socket, setSocket] = useState<Socket<any> | null>(null);
 
     useEffect(() => {
-        const newSocket = io("http://localhost:8001", {
+        const newSocket = io("https://doctime-mern.onrender.com", {
             reconnect: true,
             secure: true,
             transports: ['polling', 'websocket'], 
