@@ -1,26 +1,21 @@
 import React, { useState, useEffect } from 'react';
-// import './Otp.css';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../AxiosConfig/axiosInstance';
 import { toast } from "react-toastify";
-// import Loading from "../../Loading/Loading";
-
 
 const DoctorOtp = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
   const [resendEnabled, setResendEnabled] = useState(false);
   const [countdown, setCountdown] = useState(60);
-  const [error, setError] = useState<string>("");
-  const [isLoading, setIsLoading] = useState(false); // Loading state
-
+  const [error, setError] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-
 
   useEffect(() => {
     if (countdown > 0) {
       const timer = setInterval(() => {
-        setCountdown(countdown - 1);
+        setCountdown(prev => prev - 1);
       }, 1000);
       return () => clearInterval(timer);
     } else {
@@ -37,39 +32,32 @@ const DoctorOtp = () => {
     }
   };
 
-  const handleVerify =async () => { 
-    // Add your OTP verification logic here
+  const handleVerify = async () => {
     setIsLoading(true);
     try {
       const enteredOtp = otp.join('');
+      const response = await axiosInstance.post('/api/auth/doctorVerifyOtp', { enteredOtp });
 
-            const response = await axiosInstance.post('/api/auth/doctorVerifyOtp', {
-              enteredOtp: enteredOtp
-            });
-      
-            // Handle the response from the backend
-            console.log(response.data);
-            if (response.data && response.data.status) {
-              localStorage.removeItem("doctorEmail");
-              navigate('/doctorLogin');
-              toast.success('Registration Completed')
-            } else {
-              setError("User registration failed");
-            }
-          } catch (error) {
-            setIsLoading(false); // Stop loading if registration fails
-            console.error('Error verifying OTP:', error);
-          }
-    console.log('OTP entered:', otp.join(''));
+      if (response.data && response.data.status) {
+        localStorage.removeItem("doctorEmail");
+        toast.success('Registration Completed');
+        navigate('/doctorLogin');
+      } else {
+        setError("User registration failed");
+      }
+    } catch (error) {
+      console.error('Error verifying OTP:', error);
+      toast.error('OTP verification failed');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleResend = async () => {
     try {
       const email = localStorage.getItem("doctorEmail");
-      const data = { email };
-console.log(data,"mail checking for otp");
+      const response = await axiosInstance.post("/api/auth/generateOtp", { email });
 
-      const response = await axiosInstance.post("/api/auth/generateOtp", data);
       if (response) {
         toast.success("OTP Resent Successfully");
       } else {
@@ -78,17 +66,19 @@ console.log(data,"mail checking for otp");
     } catch (error) {
       console.error("Error sending OTP:", error);
       toast.error("Failed to Send OTP");
+    } finally {
+      setCountdown(60);
+      setResendEnabled(false);
     }
-    setCountdown(60);
-    setResendEnabled(false);
-    console.log('OTP resent');
   };
 
   return (
-    <div className="flex flex-col items-center justify-center  h-96 ">
+    <div className="flex flex-col items-center justify-center h-96">
       <div className="bg-slate-200 p-8 rounded shadow-md w-80">
         <h2 className="text-xl font-bold mb-4 text-center">Enter OTP</h2>
-        <p className="text-gray-600 mb-6 text-center">We have sent a verification code to your Email</p>
+        <p className="text-gray-600 mb-6 text-center">
+          We have sent a verification code to your Email
+        </p>
         <div className="flex justify-center mb-4">
           {otp.map((digit, index) => (
             <input
@@ -104,8 +94,9 @@ console.log(data,"mail checking for otp");
         <button
           onClick={handleVerify}
           className="w-full py-2 bg-cyan-900 text-white rounded hover:bg-cyan-950 transition-colors"
+          disabled={isLoading}
         >
-          Verify
+          {isLoading ? 'Verifying...' : 'Verify'}
         </button>
         <div className="mt-4 text-center">
           {countdown > 0 ? (
@@ -120,10 +111,10 @@ console.log(data,"mail checking for otp");
             </button>
           )}
         </div>
+        {error && <p className="mt-2 text-red-600 text-center">{error}</p>}
       </div>
     </div>
   );
 };
 
 export default DoctorOtp;
-
