@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { Doctor, SlotData } from "../../Interfaces/Doctor/DoctorInterfaces";
 import axiosInstance from "../../AxiosConfig/axiosInstance";
-import { useSocket } from "../../REAL_TIME/Socket";
+// import { useSocket } from "../../REAL_TIME/Socket";
 import { formatDate } from "../../utils/formatDate"; 
 import { FaTimesCircle } from "react-icons/fa";
 
@@ -21,7 +21,7 @@ const ViewDoctorDetails: React.FC = () => {
   const [selectedTime, setSelectedTime] = useState<any>("");
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const User = useSelector((state: any) => state.persisted.auth);
-  const socket: any = useSocket();
+  // const socket: any = useSocket();
   const navigate = useNavigate();
 
   console.log(selectedDate,"dddddd", selectedTime);

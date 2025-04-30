@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 
 import { useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import axiosInstance from "../../../AxiosConfig/axiosInstance";
 import { format } from "date-fns"; 
@@ -129,13 +129,13 @@ const ChatBox: React.FC<ChatBoxProps> = ({ selectedDoctor, socket }) => {
   };
 
   const sendMessage = async () => {
-    const data = {
-      converstationId: conversationId,
-      content: messageInput,
-      recieverId: selectedDoctor._id,
-      senderId: User.user._id,
-      type: "text",
-    };
+    // const data = {
+    //   converstationId: conversationId,
+    //   content: messageInput,
+    //   recieverId: selectedDoctor._id,
+    //   senderId: User.user._id,
+    //   type: "text",
+    // };
     const currentTime = new Date(); // Get the current timestamp
 
     socket?.emit("sendMessage", {
