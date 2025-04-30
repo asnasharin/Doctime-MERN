@@ -1,4 +1,3 @@
-import React from 'react'
 import DoctorCard from '../components/DoctorCard/DoctorCard'
 import Footer from '../components/Footer/Footer'
 

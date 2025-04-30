@@ -8,7 +8,7 @@ import { format } from "date-fns";
 import { PhotoIcon, XMarkIcon } from "@heroicons/react/24/outline"; 
 import EmojiPicker from "emoji-picker-react"; 
 import AudioWaveLoader from "../AudioChat/AudioWaveLoader";
-import SendIcon from "../AudioChat/SendIcon";
+// import SendIcon from "../AudioChat/SendIcon";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css"; 
 interface ChatBoxProps {

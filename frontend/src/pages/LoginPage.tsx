@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import  { Fragment } from 'react';
 import Login from '../components/Login/Login';
 // import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';

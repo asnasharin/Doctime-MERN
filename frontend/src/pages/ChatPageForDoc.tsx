@@ -1,4 +1,3 @@
-import React from 'react'
 import Chat from '../REAL_TIME/CHAT/DoctorSideChat/Chat'
 
 function ChatPageForDoc() {

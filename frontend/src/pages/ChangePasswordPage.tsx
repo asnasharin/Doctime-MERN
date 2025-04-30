@@ -1,4 +1,3 @@
-import React from 'react'
 import ChangePassword from '../components/PasswordUpdations/ChangePassword'
 import Footer from '../components/Footer/Footer'
 

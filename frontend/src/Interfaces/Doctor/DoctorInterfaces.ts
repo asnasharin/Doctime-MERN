@@ -66,7 +66,7 @@ export interface Doctor {
     doctor: {
       [x: string]: ReactNode;
       name: string;
-      // other properties of the doctor object if needed
+    
     };
     status:string;
     specialty: string;
